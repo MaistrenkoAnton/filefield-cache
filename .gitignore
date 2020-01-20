@@ -10,6 +10,6 @@ node_modules/
 *.egg-info/
 staticfiles/
 media/
-package/material/
+package/filefield_cache/
 *.txt.py
 .env

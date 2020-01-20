@@ -23,7 +23,6 @@ setup(
     classifiers=[
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
-        'Framework :: Django :: 2.2',
         'Framework :: Django :: 3.0',
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
