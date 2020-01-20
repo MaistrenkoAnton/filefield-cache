@@ -23,7 +23,7 @@ class CachedAdminFileWidget(AdminFileWidget):
         if not files.get(name):
             field_name = self.format_cache_key.format(name)
             _hash = data.get(field_name)
-            if data.get('clear-cache'):
+            if data.get(f'{name}-clear-cache'):
                 self.cache.delete(_hash)
             else:
                 files = self._get_cache_files(_hash, files, name)

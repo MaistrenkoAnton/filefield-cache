@@ -13,7 +13,7 @@
   <p class="file-upload">
     {% if widget.file_name %}
       {% trans 'Cached' %}: {{ widget.file_name }}<br>
-      {% trans 'Clear cache' %}: <input type="checkbox" name="clear-cache"><br>
+      {% trans 'Clear cache' %}: <input type="checkbox" name="{{ widget.name }}-clear-cache"><br>
     {% endif %}
 {% endif %}
 
