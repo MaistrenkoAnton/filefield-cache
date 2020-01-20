@@ -1,8 +1,9 @@
-|python| |django|
+|pypi| |python| |django|
 
 .. .. |build|
 
-
+.. |pypi| image:: https://d25lcipzij17d.cloudfront.net/badge.svg?id=py&type=6&v=0.0.2&x2=0
+    :target: https://pypi.org/project/filefield-cache/
 .. |python| image:: https://img.shields.io/badge/python-3.6+-blue.svg
     :target: https://www.python.org/
 .. |django| image:: https://img.shields.io/badge/django-3.0+-mediumseagreen.svg
