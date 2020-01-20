@@ -1,3 +1,5 @@
+{% load i18n %}
+
 {% if widget.is_initial %}
    <p class="file-upload">{{ widget.initial_text }}: <a href="{{ widget.value.url }}">{{ widget.value }}</a>
     {% if not widget.required %}
@@ -10,7 +12,8 @@
 {% else %}
   <p class="file-upload">
     {% if widget.file_name %}
-      Cached: {{ widget.file_name }}<br>
+      {% trans 'Cached' %}: {{ widget.file_name }}<br>
+      {% trans 'Clear cache' %}: <input type="checkbox" name="clear-cache"><br>
     {% endif %}
 {% endif %}
 

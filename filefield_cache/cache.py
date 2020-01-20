@@ -55,3 +55,10 @@ class FileCache:
             )
             upload.file.seek(0)
         return upload
+
+    def delete(self, key):
+        """
+        Delete file data from cache
+        :param key: cache key
+        """
+        self.cache.delete(key)
