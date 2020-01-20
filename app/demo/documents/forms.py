@@ -1,6 +1,6 @@
 from django import forms
 
-from filefield_cache.widgets import CachedAdminFileWidget, TestCachedAdminFileWidget
+from filefield_cache.widgets import CachedAdminFileWidget
 from demo.documents.models import Document
 
 

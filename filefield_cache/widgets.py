@@ -2,24 +2,7 @@ import hashlib
 
 from django.contrib.admin.widgets import AdminFileWidget
 
-from filefield_cache.cache import FileCache, TestFileCache
-
-
-class TestCachedAdminFileWidget(AdminFileWidget):
-    def value_from_datadict(self, data, files, name):
-        if not files.get(name):
-            files = {name: FileCache().get('123')}
-        upload = super().value_from_datadict(data, files, name)
-        return upload
-
-    def get_context(self, name, value, attrs):
-        if value:
-            FileCache().set('123', value)
-        context = super().get_context(name, value, attrs)
-        context['widget'].update({
-            'file_name': value,
-        })
-        return context
+from filefield_cache.cache import FileCache
 
 
 class CachedAdminFileWidget(AdminFileWidget):
@@ -30,13 +13,24 @@ class CachedAdminFileWidget(AdminFileWidget):
     format_cache_key = '{}-cached-filefield'
 
     def value_from_datadict(self, data, files, name):
+        """
+        Put the file from cache into data
+        :param data: Form data
+        :param files: FILES data
+        :param name: Field name
+        """
         if not files.get(name):
             field_name = self.format_cache_key.format(name)
             _hash = data.get(field_name)
-            files = {name: FileCache().get(_hash)}
+            file = FileCache().get(_hash)
+            if file:
+                files = {name: file}
         return super().value_from_datadict(data, files, name)
 
     def get_context(self, name, value, attrs):
+        """
+        Extend widget template context
+        """
         _hash = None
         if value:
             _hash = hashlib.md5(value.read()).hexdigest()
