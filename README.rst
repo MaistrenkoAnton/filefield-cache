@@ -2,7 +2,7 @@
 
 .. .. |build|
 
-.. |pypi| image:: https://d25lcipzij17d.cloudfront.net/badge.svg?id=py&type=6&v=0.0.2&x2=0
+.. |pypi| image:: https://d25lcipzij17d.cloudfront.net/badge.svg?id=py&type=6&v=0.0.3&x2=0
     :target: https://pypi.org/project/filefield-cache/
 .. |python| image:: https://img.shields.io/badge/python-3.6+-blue.svg
     :target: https://www.python.org/
@@ -25,7 +25,7 @@ Quick start
 
 **pip install filefield-cache**
 
-1. Add **material.admin** and **material.admin.default** to your INSTALLED_APPS setting instead of **filefield_cache**::
+1. Add **filefield_cache** to your INSTALLED_APPS settings::
  - required
 
 .. code-block:: python
