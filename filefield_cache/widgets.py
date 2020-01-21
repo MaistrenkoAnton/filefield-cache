@@ -48,9 +48,12 @@ class CachedAdminFileWidget(AdminFileWidget):
         """
         _hash = None
         if value:
-            _hash = hashlib.md5(value.read()).hexdigest()
-            value.seek(0)
-            self.cache.set(_hash, value)
+            try:
+                _hash = hashlib.md5(value.read()).hexdigest()
+                value.seek(0)
+                self.cache.set(_hash, value)
+            except FileNotFoundError:
+                return super().get_context(name, value, attrs)
         context = super().get_context(name, value, attrs)
         context['widget'].update({
             'hash': _hash,
