@@ -10,7 +10,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name="filefield-cache",
-    version="0.0.3",
+    version="0.0.5",
     license='MIT License',
     packages=find_packages(),
     author="Anton Maistrenko",
