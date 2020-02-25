@@ -17,6 +17,10 @@ Retain files after form validation. Keep the file data in the cache for 15 minut
 
 .. image:: https://raw.githubusercontent.com/MaistrenkoAnton/filefield-cache//master/app/demo/screens/form.png
 
+############################################
+
+.. image:: https://raw.githubusercontent.com/MaistrenkoAnton/filefield-cache//master/app/demo/screens/field.png
+
 Cache data can be cleared by checkbox.
 
 
